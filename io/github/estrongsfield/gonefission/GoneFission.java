@@ -3,12 +3,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class GoneFission extends JavaPlugin{
 
-	
 	@Override
 	public void onEnable()
 	{
+		ConfigFile cFile = new ConfigFile(this.getConfig(), this.getLogger());
+		cFile.load();
+		this.saveConfig();
 		getLogger().info("GoneFission chain of command is enabled");
-		//AdMessages ls = new AdMessages();
         //getServer().getPluginManager().registerEvents(new AdChatListener(), this);
 	}
 	
